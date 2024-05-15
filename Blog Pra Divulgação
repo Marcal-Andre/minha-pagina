@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meu Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .post {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        .post h2 {
+            margin: 0;
+        }
+        .post p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="blog"></div>
+
+    <script>
+        var posts = [
+            { title: 'Post 1', content: 'Este é o conteúdo do post 1.' },
+            { title: 'Post 2', content: 'Este é o conteúdo do post 2.' },
+            { title: 'Post 3', content: 'Este é o conteúdo do post 3.' }
+        ];
+
+        var blogElement = document.getElementById('blog');
+
+        for (var i = 0; i < posts.length; i++) {
+            var postElement = document.createElement('div');
+            postElement.className = 'post';
+
+            var titleElement = document.createElement('h2');
+            titleElement.textContent = posts[i].title;
+            postElement.appendChild(titleElement);
+
+            var contentElement = document.createElement('p');
+            contentElement.textContent = posts[i].content;
+            postElement.appendChild(contentElement);
+
+            blogElement.appendChild(postElement);
+        }
+    </script>
+</body>
+</html>
